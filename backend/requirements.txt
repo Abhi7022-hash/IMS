@@ -1,0 +1,10 @@
+flask
+flask-sqlalchemy
+flask-cors
+flask-limiter
+psycopg2-binary
+pymongo
+redis
+python-dotenv
+pytest
+gunicorn
