@@ -34,6 +34,14 @@ See docs/architecture.png
 Signals → asyncio.Queue (in-memory, 50k capacity) → Background worker drains to MongoDB.
 If MongoDB is slow, queue absorbs the burst. The /ingest endpoint never blocks.
 
+## Backpressure Handling
+When signals arrive faster than MongoDB can save them:
+- Signals go into asyncio.Queue (50k capacity) instantly
+- Background worker drains the queue slowly into MongoDB
+- If MongoDB is slow or down, queue absorbs the burst
+- The /ingest endpoint never blocks or crashes
+- If queue exceeds 50k, API returns 503 (try again) instead of crashing
+
 ## Endpoints
 | Method | URL | Description |
 |--------|-----|-------------|
