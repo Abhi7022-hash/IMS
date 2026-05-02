@@ -3,6 +3,24 @@
 # What this System does
 This system monitors a distributed infrastructure stack and manages incident workflows. When servers or databases fail, signals are ingested, grouped, and tracked from detection to resolution with a mandatory Root Cause Analysis.
 
+# Project Stracture
+ims/
+├── backend/
+│   ├── app.py          ← All Flask logic, LLD patterns, retry logic
+│   ├── tests/          ← 12 unit tests
+│   └── requirements.txt
+├── frontend/
+│   └── src/
+│       ├── Dashboard.jsx
+│       ├── IncidentDetail.jsx
+│       └── RCAForm.jsx
+├── scripts/
+│   └── mock_failure.py
+├── docs/
+│   ├── architecture.svg
+│   └── PROMPTS.md
+└── docker-compose.yml
+
 ## Quick Start
 ```bash
 docker-compose up --build
