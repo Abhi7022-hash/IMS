@@ -1,5 +1,8 @@
 # Incident Management System (IMS)
 
+# What this System does
+This system monitors a distributed infrastructure stack and manages incident workflows. When servers or databases fail, signals are ingested, grouped, and tracked from detection to resolution with a mandatory Root Cause Analysis.
+
 ## Quick Start
 ```bash
 docker-compose up --build
