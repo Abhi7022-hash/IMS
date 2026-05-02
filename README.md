@@ -17,7 +17,7 @@ ims/
 ├── scripts/
 │   └── mock_failure.py
 ├── docs/
-│   ├── architecture.svg
+│   ├── architecture.png
 │   └── PROMPTS.md
 └── docker-compose.yml
 
